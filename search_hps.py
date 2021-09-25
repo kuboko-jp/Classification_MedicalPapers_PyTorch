@@ -31,7 +31,7 @@ class Hparams:
         self.batch_size = 256
         self.token_max_length = 256
         self.model_name = "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"
-        self.num_epochs = 1
+        self.num_epochs = 10
         self.class_1_weight = 150
         self.initial_lr = 2e-5  # 2e-5
         self.model_type = 'lstm'  # cnn, lstm
@@ -370,7 +370,7 @@ def main():
         preds_labels_dict = inference(model, dataloader=dataloaders['test'], device=device)
 
         fb_score = fbeta_score(y_true=preds_labels_dict['labels'], y_pred=preds_labels_dict['preds'], beta=7.0)
-        
+
         del model
         torch.cuda.empty_cache()
 
