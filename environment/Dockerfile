@@ -24,6 +24,6 @@ ENV PATH /opt/conda/envs/srws/bin:$PATH
 #SHELL ["conda", "run", "-n", "srws", "/bin/bash", "-c"]
 RUN conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia -y
 
-WORKDIR /
+WORKDIR /workspace
 
 CMD ["/bin/bash"]
