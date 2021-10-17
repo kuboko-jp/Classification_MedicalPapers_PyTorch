@@ -13,5 +13,5 @@ This program uses [microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext
 docker build -t srws:latest ./environment
 ```
 ```Bash
-docker run -it --name srws --gpus all -v $(pwd):/workspace -p 9994:9994 srws:latest /bin/bash
+docker run -it --name srws --gpus all -v $(pwd):/workspace srws:latest /bin/bash
 ```
